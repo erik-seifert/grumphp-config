@@ -1,0 +1,14 @@
+{
+    "name": "b-connect/grumphp-config",
+    "description": "Default grump config for projects",
+    "type": "project",
+    "require": {
+        "phpro/grumphp": "^0.14.3"
+    },
+    "authors": [
+        {
+            "name": "Erik Seifert",
+            "email": "erik.seifert@b-connect.de"
+        }
+    ]
+}
