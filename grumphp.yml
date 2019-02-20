@@ -15,9 +15,10 @@ parameters:
             keywords:
                 - "die("
                 - "dsm("
+                - "print_r("
                 - "var_dump("
                 - "exit;"
-              whitelist_patterns:
+            whitelist_patterns:
                 - /^docroot\/modules\/custom\/(.*)/
                 - /^docroot\/themes\/custom\/(.*)/
             triggered_by: ['php', 'module', 'inc', 'install', 'theme']
