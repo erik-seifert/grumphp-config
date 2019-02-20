@@ -30,8 +30,7 @@ parameters:
             ignore_patterns:
               - config/
               - docroot/libraries/
-              - docroot/themes/custom/bc_theme/patternlab
-              - docroot/themes/custom/bc_theme/components
+              - docroot/themes/custom/*/patternlab
             triggered_by:
               - php
               - module
