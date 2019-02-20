@@ -3,7 +3,8 @@
     "description": "Default grump config for projects",
     "type": "library",
     "require": {
-        "phpro/grumphp": "^0.14.3"
+        "phpro/grumphp": "^0.14.3",
+        "drupal/coder": "^8.3"
     },
     "authors": [
         {
