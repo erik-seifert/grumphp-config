@@ -4,6 +4,8 @@ parameters:
     tasks:
         phpstan:
             configuration: vendor/b-connect/grumphp-config/phpstan.neon
+            level: 1
+            ignore_patterns: ['/^(?!docroot\/modules\/custom).*/']
         yamllint:
             whitelist_patterns:
                 - /^docroot\/modules\/custom\/(.*)/
