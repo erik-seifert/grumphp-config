@@ -34,7 +34,7 @@ parameters:
             ignore_patterns:
               - config/
               - docroot/libraries/
-              - docroot/themes/custom/*/patternlab
+              - docroot/themes/custom/*/components
             triggered_by:
               - php
               - module
