@@ -2,6 +2,8 @@ parameters:
     git_dir: .
     bin_dir: vendor/bin
     tasks:
+        phpstan:
+            configuration: vendor/b-connect/grumphp-config/phpstan.neon
         yamllint:
             whitelist_patterns:
                 - /^docroot\/modules\/custom\/(.*)/
