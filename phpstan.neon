@@ -1,8 +1,8 @@
 parameters:
-	customRulesetUsed: true
-	reportUnmatchedIgnoredErrors: false
+  customRulesetUsed: true
+  reportUnmatchedIgnoredErrors: false
   excludes_analyse:
-		- %rootDir%/vendor/*
+    - %rootDir%/vendor/*
     - %rootDir%/docroot/core/*
     - %rootDir%/docroot/modules/contrib/*
     - %rootDir%/docroot/themes/contrib/*
@@ -10,5 +10,5 @@ parameters:
     - %rootDir%/docroot/sites/*
     - %rootDir%/docroot/profiles/contrib/*
 includes:
-	- vendor/mglaman/phpstan-drupal/extension.neon
-	- vendor/phpstan/phpstan-deprecation-rules/rules.neon
+  - vendor/mglaman/phpstan-drupal/extension.neon
+  - vendor/phpstan/phpstan-deprecation-rules/rules.neon
