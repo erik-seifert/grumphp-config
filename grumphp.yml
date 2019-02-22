@@ -2,6 +2,8 @@ parameters:
     git_dir: .
     bin_dir: vendor/bin
     tasks:
+        jsonlint:
+            ignore_patterns: ['/^(?!docroot\/modules\/custom).*/']
         git_commit_message:
             allow_empty_message: false
             type_scope_conventions:
