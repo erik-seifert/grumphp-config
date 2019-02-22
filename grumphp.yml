@@ -2,6 +2,23 @@ parameters:
     git_dir: .
     bin_dir: vendor/bin
     tasks:
+        git_commit_message:
+            allow_empty_message: false
+            type_scope_conventions:
+                types:
+                    - build
+                    - ci
+                    - chore
+                    - docs
+                    - feat
+                    - fix
+                    - new
+                    - upd
+                    - perf
+                    - refactor
+                    - revert
+                    - style
+                    - test
         phpstan:
             configuration: vendor/b-connect/grumphp-config/phpstan.neon
             level: 1
