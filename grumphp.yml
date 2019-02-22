@@ -19,6 +19,7 @@ parameters:
                     - revert
                     - style
                     - test
+                    - chg
         phpstan:
             configuration: vendor/b-connect/grumphp-config/phpstan.neon
             level: 1
