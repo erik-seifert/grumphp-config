@@ -5,7 +5,7 @@ parameters:
         jsonlint:
             ignore_patterns: ['/^(?!docroot\/modules\/custom).*/']
         git_commit_message:
-            max_subject_width: 30
+            max_subject_width: 0
             allow_empty_message: false
             type_scope_conventions:
                 types:
