@@ -1,6 +1,9 @@
 parameters:
     git_dir: .
     bin_dir: vendor/bin
+    ascii:
+        succeeded: vendor/b-connect/grumphp-config/art/success.txt
+        failed: vendor/b-connect/grumphp-config/art/error.txt
     tasks:
         jsonlint:
             ignore_patterns: ['/^(?!docroot\/modules\/custom).*/']
