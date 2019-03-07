@@ -11,6 +11,7 @@ parameters:
             whitelist_patterns:
               - /^docroot\/modules\/custom\/(.*)/
               - /^docroot\/themes\/custom\/(.*)/
+              - /^docroot\/themes\/patternlab\/(.*)/
             triggered_by: ['twig']
         jsonlint:
             ignore_patterns: ['/^(?!docroot\/modules\/custom).*/']
