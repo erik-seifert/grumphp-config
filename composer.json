@@ -9,7 +9,14 @@
         "phpstan/phpstan": "^0.11.2",
         "phpstan/phpstan-deprecation-rules": "^0.11.0",
         "mglaman/phpstan-drupal": "^0.11.2",
-        "phpunit/phpunit": "^8.0"
+        "phpunit/phpunit": "^8.0",
+        "allocine/twigcs": "^3.1",
+        "twig/twig" :"^1.0"
+    },
+    "autoload":{
+        "psr-4":{
+            "bconnect\\GrumPHPTwigCS\\": "src/"
+        }
     },
     "authors": [
         {

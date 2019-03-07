@@ -1,10 +1,17 @@
 parameters:
+    extensions:
+      - bconnect\GrumPHPTwigCS\ExtensionLoader
     git_dir: .
     bin_dir: vendor/bin
     ascii:
         succeeded: vendor/b-connect/grumphp-config/art/success.txt
         failed: vendor/b-connect/grumphp-config/art/error.txt
     tasks:
+        twig_cs:
+            whitelist_patterns:
+              - /^docroot\/modules\/custom\/(.*)/
+              - /^docroot\/themes\/custom\/(.*)/
+            triggered_by: ['twig']
         jsonlint:
             ignore_patterns: ['/^(?!docroot\/modules\/custom).*/']
         git_commit_message:
