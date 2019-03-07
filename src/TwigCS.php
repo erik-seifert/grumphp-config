@@ -77,6 +77,8 @@ class TwigCS extends AbstractExternalTask {
       return TaskResult::createSkipped($this, $context);
     }
 
+    $linterLogs = [];
+
     /** @var \Symfony\Component\Finder\SplFileInfo $file */
     foreach ($files as $file) {
       $arguments = $this->processBuilder->createArgumentsForCommand('twigcs');
@@ -84,8 +86,11 @@ class TwigCS extends AbstractExternalTask {
       $process = $this->processBuilder->buildProcess($arguments);
       $process->run();
       if (!$process->isSuccessful()) {
-        return TaskResult::createFailed($this, $context, $this->formatter->format($process));
+        $linterLogs[] = $this->formatter->format($process);
       }
+    }
+    if (count($linterLogs) > 0) {
+      return TaskResult::createFailed($this, $context, implode("\n", $linterLogs));
     }
     return TaskResult::createPassed($this, $context);
   }
