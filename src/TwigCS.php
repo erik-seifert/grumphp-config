@@ -7,6 +7,7 @@ use GrumPHP\Task\Context\RunContext;
 use GrumPHP\Task\Context\GitPreCommitContext;
 use GrumPHP\Task\Context\ContextInterface;
 use GrumPHP\Task\AbstractExternalTask;
+use GrumPHP\Runner\TaskResultInterface;
 use GrumPHP\Runner\TaskResult;
 
 
@@ -15,7 +16,7 @@ class TwigCS extends AbstractExternalTask {
   /**
    * @return string
    */
-  public function getName()
+  public function getName(): string
   {
       return 'twig_cs';
   }
@@ -25,7 +26,7 @@ class TwigCS extends AbstractExternalTask {
    * @throws \Symfony\Component\OptionsResolver\Exception\AccessException
    * @throws \Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException
    */
-  public function getConfigurableOptions()
+  public function getConfigurableOptions(): OptionsResolver
   {
     $resolver = new OptionsResolver();
     $resolver->setDefaults([
@@ -44,7 +45,7 @@ class TwigCS extends AbstractExternalTask {
    *
    * @return bool
    */
-  public function canRunInContext(ContextInterface $context)
+  public function canRunInContext(ContextInterface $context): bool
   {
     return ($context instanceof GitPreCommitContext || $context instanceof RunContext);
   }
@@ -61,7 +62,7 @@ class TwigCS extends AbstractExternalTask {
    * @throws \Symfony\Component\OptionsResolver\Exception\OptionDefinitionException
    * @throws \Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException
    */
-  public function run(ContextInterface $context)
+  public function run(ContextInterface $context): TaskResultInterface
   {
     $config = $this->getConfiguration();
     $files = $context->getFiles()->extensions($config['triggered_by']);
