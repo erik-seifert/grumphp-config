@@ -9,12 +9,12 @@ parameters:
     tasks:
         twig_cs:
             whitelist_patterns:
-              - /^docroot\/modules\/custom\/(.*)/
-              - /^docroot\/themes\/custom\/(.*)/
-              - /^docroot\/themes\/patternlab\/(.*)/
+              - /^(docroot|web)\/modules\/custom\/(.*)/
+              - /^(docroot|web)\/themes\/custom\/(.*)/
+              - /^(docroot|web)\/themes\/patternlab\/(.*)/
             triggered_by: ['twig']
         jsonlint:
-            ignore_patterns: ['/^(?!docroot\/modules\/custom).*/']
+            ignore_patterns: ['/^(?!docroot\/modules\/custom).*/', '/^(?!web\/modules\/custom).*/']
         git_commit_message:
             max_subject_width: 0
             allow_empty_message: false
@@ -37,11 +37,11 @@ parameters:
         phpstan:
             configuration: vendor/b-connect/grumphp-config/phpstan.neon
             level: 1
-            ignore_patterns: ['/^(?!docroot\/modules\/custom).*/']
+            ignore_patterns: ['/^(?!docroot\/modules\/custom).*/', '/^(?!web\/modules\/custom).*/']
         yamllint:
             whitelist_patterns:
-                - /^docroot\/modules\/custom\/(.*)/
-                - /^docroot\/themes\/custom\/(.*)/
+                - /^(docroot|web)\/modules\/custom\/(.*)/
+                - /^(docroot|web)\/themes\/custom\/(.*)/
             ignore_patterns: []
             object_support: false
             exception_on_invalid_type: false
@@ -55,8 +55,8 @@ parameters:
                 - "var_dump("
                 - "exit;"
             whitelist_patterns:
-                - /^docroot\/modules\/custom\/(.*)/
-                - /^docroot\/themes\/custom\/(.*)/
+                - /^(docroot|web)\/modules\/custom\/(.*)/
+                - /^(docroot|web)\/themes\/custom\/(.*)/
             triggered_by: ['php', 'module', 'inc', 'install', 'theme']
             regexp_type: G
         phpcs:
@@ -67,10 +67,12 @@ parameters:
               - config/
               - docroot/libraries/
               - docroot/themes/custom/*/components
+              - web/libraries/
+              - web/themes/custom/*/components
             triggered_by:
               - php
               - module
               - inc
             whitelist_patterns:
-              - /^docroot\/modules\/custom\/(.*)/
-              - /^docroot\/themes\/custom\/(.*)/
+              - /^(docroot|web)\/modules\/custom\/(.*)/
+              - /^(docroot|web)\/themes\/custom\/(.*)/
