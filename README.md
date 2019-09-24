@@ -1,5 +1,19 @@
 # Grump PHP config for Drupal Projects
 
+## Install
+
+`composer req b-connec/grump-config --dev`
+
+Add following to your composer.json
+
+```json
+  "extra": {
+    "grumphp": {
+            "config-default-path": "vendor/b-connect/grumphp-config/grumphp.yml"
+        }
+  }
+```
+
 ## Twig CS
 
 ### Whitelist
