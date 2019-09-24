@@ -37,7 +37,8 @@ parameters:
         phpstan:
             configuration: vendor/b-connect/grumphp-config/phpstan.neon
             level: 1
-            ignore_patterns: ['/^(?!docroot\/modules\/custom).*/', '/^(?!web\/modules\/custom).*/']
+            ignore_patterns: ['/^(?!docroot).*/', '/^(?!web).*/']
+            force_patterns: ['/^(?!docroot\/modules\/custom).*/', '/^(?!web\/modules\/custom).*/']
         yamllint:
             whitelist_patterns:
                 - /^(docroot|web)\/modules\/custom\/(.*)/
