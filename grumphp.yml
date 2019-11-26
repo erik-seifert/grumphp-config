@@ -55,6 +55,7 @@ parameters:
             keywords:
                 - "die("
                 - "dsm("
+                - "dump("
                 - "print_r("
                 - "var_dump("
                 - "exit;"
