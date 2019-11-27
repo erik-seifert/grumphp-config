@@ -2,7 +2,7 @@
 
 ## Install
 
-`composer req b-connec/grump-config --dev`
+`composer req b-connect/grumphp-config --dev`
 
 Add following to your composer.json
 
