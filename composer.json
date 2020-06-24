@@ -1,5 +1,5 @@
 {
-    "name": "shaquer2/grumphp-config",
+    "name": "shaquer/grumphp-config",
     "description": "Default grump config for projects",
     "type": "library",
     "require": {
