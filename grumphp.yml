@@ -4,8 +4,8 @@ parameters:
     git_dir: .
     bin_dir: vendor/bin
     ascii:
-        succeeded: vendor/b-connect/grumphp-config/art/success.txt
-        failed: vendor/b-connect/grumphp-config/art/error.txt
+        succeeded: vendor/shaquer/grumphp-config/art/success.txt
+        failed: vendor/shaquer/grumphp-config/art/error.txt
     tasks:
         twig_cs:
             whitelist_patterns:
@@ -35,7 +35,7 @@ parameters:
                     - test
                     - chg
         phpstan:
-            configuration: vendor/b-connect/grumphp-config/phpstan.neon
+            configuration: vendor/shaquer/grumphp-config/phpstan.neon
             level: 1
             ignore_patterns: ['/^.*/']
             force_patterns:
