@@ -78,6 +78,9 @@ parameters:
               - php
               - module
               - inc
+              - yml
+              - install
+              - theme
             whitelist_patterns:
               - /^(docroot|web)\/modules\/custom\/(.*)/
               - /^(docroot|web)\/themes\/custom\/(.*)/
