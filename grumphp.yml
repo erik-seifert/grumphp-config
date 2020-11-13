@@ -1,6 +1,4 @@
 grumphp:
-    extensions:
-      - shaquer\GrumPHPTwigCS\ExtensionLoader
     ascii:
         succeeded: vendor/shaquer/grumphp-config/art/success.txt
         failed: vendor/shaquer/grumphp-config/art/error.txt
@@ -86,3 +84,7 @@ grumphp:
             whitelist_patterns:
               - /^(docroot|web)\/modules\/custom\/(.*)/
               - /^(docroot|web)\/themes\/custom\/(.*)/
+services:
+  shaquer\GrumPHPTwigCS\shaquer\GrumPHPTwigCS:
+      tags:
+        - {name: grumphp.task, task: twig_cs, priority: 0}
