@@ -1,8 +1,6 @@
-parameters:
+grumphp:
     extensions:
       - bconnect\GrumPHPTwigCS\ExtensionLoader
-    git_dir: .
-    bin_dir: vendor/bin
     ascii:
         succeeded: vendor/shaquer/grumphp-config/art/success.txt
         failed: vendor/shaquer/grumphp-config/art/error.txt
@@ -47,6 +45,7 @@ parameters:
                 - /^(docroot|web)\/modules\/custom\/(.*)/
                 - /^(docroot|web)\/themes\/custom\/(.*)/
             ignore_patterns: []
+            
             object_support: false
             exception_on_invalid_type: false
             parse_constant: false
