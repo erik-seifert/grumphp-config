@@ -1,6 +1,6 @@
 <?php
 
-namespace bconnect\GrumPHPTwigCS;
+namespace shaquer\GrumPHPTwigCS;
 
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use GrumPHP\Task\Context\RunContext;
@@ -14,23 +14,15 @@ use GrumPHP\Runner\TaskResult;
 class TwigCS extends AbstractExternalTask {
 
   /**
-   * @return string
-   */
-  public function getName(): string
-  {
-      return 'twig_cs';
-  }
-
-  /**
    * @return \Symfony\Component\OptionsResolver\OptionsResolver
    * @throws \Symfony\Component\OptionsResolver\Exception\AccessException
    * @throws \Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException
    */
-  public function getConfigurableOptions(): OptionsResolver
+  public static function getConfigurableOptions(): OptionsResolver
   {
     $resolver = new OptionsResolver();
     $resolver->setDefaults([
-        'triggered_by' => ['twig.html'],
+        'triggered_by' => ['twig.html', 'twig'],
         'severity' => '',
         'whitelist_patterns' => [],
     ]);
@@ -64,7 +56,7 @@ class TwigCS extends AbstractExternalTask {
    */
   public function run(ContextInterface $context): TaskResultInterface
   {
-    $config = $this->getConfiguration();
+    $config = $this->getConfig()->getOptions();
     $files = $context->getFiles()->extensions($config['triggered_by']);
     $whitelistPatterns = $config['whitelist_patterns'];
     $extensions = '/\.('.implode('|', $config['triggered_by']).')$/i';

@@ -1,6 +1,6 @@
 <?php
 
-namespace bconnect\GrumPHPTwigCS;
+namespace shaquer\GrumPHPTwigCS;
 
 use GrumPHP\Extension\ExtensionInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -23,9 +23,8 @@ class ExtensionLoader implements ExtensionInterface
      * @throws \Symfony\Component\DependencyInjection\Exception\ServiceCircularReferenceException
      * @throws \Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException
      */
-    public function load(ContainerBuilder $container)
-    {
-      return $container->register('task.twig_cs', TwigCS::class)
+    public function load(ContainerBuilder $container): void {
+      $container->register('task.twig_cs', TwigCS::class)
         ->addArgument(new Reference('config'))
         ->addArgument(new Reference('process_builder'))
         ->addArgument(new Reference('formatter.raw_process'))
