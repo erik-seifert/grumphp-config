@@ -8,6 +8,13 @@ grumphp:
             severity: 'warning'
             ruleset: 'FriendsOfTwig\Twigcs\Ruleset\Official'
             triggered_by: ['twig', 'twig.html']
+            exclude:
+              - vendor
+              - web/core
+              - web/modules/contrib
+              - web/themes/contrib
+              - docroot/modules/contrib
+              - docroot/themes/contrib
         jsonlint:
             ignore_patterns: ['/^(?!docroot\/modules\/custom).*/', '/^(?!web\/modules\/custom).*/']
         git_commit_message:
@@ -32,9 +39,10 @@ grumphp:
         phpstan:
             configuration: vendor/shaquer/grumphp-config/phpstan.neon
             level: 1
-            ignore_patterns: ['/^.*/']
-            force_patterns:
-                - '/^(docroot|web)\/modules\/custom\/(.*)(php)$/'
+            ignore_patterns:
+              - '/^(docroot|web)\/modules\/contrib\/(.*)(php)$/'
+              - '/^(docroot|web)\/core\/(.*)(php)$/'
+              - '/^vendor/'
             memory_limit: "-1"
             triggered_by: ['php']
         yamllint:
