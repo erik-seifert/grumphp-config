@@ -1,6 +1,6 @@
 grumphp:
     extensions:
-      - bconnect\GrumPHPTwigCS\ExtensionLoader
+      - shaquer\GrumPHPTwigCS\ExtensionLoader
     ascii:
         succeeded: vendor/shaquer/grumphp-config/art/success.txt
         failed: vendor/shaquer/grumphp-config/art/error.txt
