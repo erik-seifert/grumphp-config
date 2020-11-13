@@ -10,13 +10,8 @@
         "phpstan/phpstan-deprecation-rules": "dev-master",
         "mglaman/phpstan-drupal": "^0.12",
         "friendsoftwig/twigcs": "^4",
-        "twig/twig" :"^1.0 || ^2.0",
+        "twig/twig" :"^2.0",
         "mavimo/phpstan-junit": "^0.3.0"
-    },
-    "autoload":{
-        "psr-4":{
-            "shaquer\\GrumPHPTwigCS\\": "src/"
-        }
     },
     "authors": [
         {

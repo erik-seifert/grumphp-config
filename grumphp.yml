@@ -3,12 +3,11 @@ grumphp:
         succeeded: vendor/shaquer/grumphp-config/art/success.txt
         failed: vendor/shaquer/grumphp-config/art/error.txt
     tasks:
-        twig_cs:
-            whitelist_patterns:
-              - /^(docroot|web)\/modules\/custom\/(.*)/
-              - /^(docroot|web)\/themes\/custom\/(.*)/
-              - /^(docroot|web)\/themes\/patternlab\/(.*)/
-            triggered_by: ['twig']
+        twigcs:
+            path: '.'
+            severity: 'warning'
+            ruleset: 'FriendsOfTwig\Twigcs\Ruleset\Official'
+            triggered_by: ['twig', 'twig.html']
         jsonlint:
             ignore_patterns: ['/^(?!docroot\/modules\/custom).*/', '/^(?!web\/modules\/custom).*/']
         git_commit_message:
@@ -84,7 +83,3 @@ grumphp:
             whitelist_patterns:
               - /^(docroot|web)\/modules\/custom\/(.*)/
               - /^(docroot|web)\/themes\/custom\/(.*)/
-services:
-  shaquer\GrumPHPTwigCS\shaquer\GrumPHPTwigCS:
-      tags:
-        - {name: grumphp.task, task: twig_cs, priority: 0}
