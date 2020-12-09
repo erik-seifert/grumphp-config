@@ -2,7 +2,7 @@
 
 ## Install
 
-`composer req b-connect/grumphp-config --dev`
+`composer req shaquer/grumphp-config --dev`
 
 Add following to your composer.json
 
