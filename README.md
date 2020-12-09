@@ -9,7 +9,7 @@ Add following to your composer.json
 ```json
   "extra": {
     "grumphp": {
-            "config-default-path": "vendor/b-connect/grumphp-config/grumphp.yml"
+            "config-default-path": "vendor/shaquer/grumphp-config/grumphp.yml"
         }
   }
 ```
