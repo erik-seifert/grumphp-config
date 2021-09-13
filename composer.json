@@ -7,7 +7,7 @@
         "drupal/coder": "^8.3",
         "squizlabs/php_codesniffer": "^3.4",
         "phpstan/phpstan": "^0.12 || dev-master",
-        "phpstan/phpstan-deprecation-rules": "dev-master",
+        "phpstan/phpstan-deprecation-rules": "^0.12 || dev-master",
         "mglaman/phpstan-drupal": "^0.12",
         "friendsoftwig/twigcs": "^4",
         "twig/twig" :"^2.0",
