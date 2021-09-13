@@ -9,7 +9,7 @@
         "phpstan/phpstan": "^0.12 || dev-master",
         "phpstan/phpstan-deprecation-rules": "^0.12 || dev-master",
         "mglaman/phpstan-drupal": "^0.12",
-        "friendsoftwig/twigcs": "^4",
+        "friendsoftwig/twigcs": "^4 || ^5",
         "twig/twig" :"^2.0",
         "mavimo/phpstan-junit": "^0.3.0"
     },
