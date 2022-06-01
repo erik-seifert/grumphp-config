@@ -1,93 +1,95 @@
 grumphp:
-    ascii:
-        succeeded: vendor/shaquer/grumphp-config/art/success.txt
-        failed: vendor/shaquer/grumphp-config/art/error.txt
-    tasks:
-        twigcs:
-            path: '.'
-            severity: 'warning'
-            ruleset: 'FriendsOfTwig\Twigcs\Ruleset\Official'
-            triggered_by: ['twig', 'twig.html']
-            exclude:
-              - vendor
-              - web/core
-              - web/modules/contrib
-              - web/themes/contrib
-              - docroot/modules/contrib
-              - docroot/themes/contrib
-        jsonlint:
-            ignore_patterns: ['/^(?!docroot\/modules\/custom).*/', '/^(?!web\/modules\/custom).*/']
-        git_commit_message:
-            max_subject_width: 0
-            allow_empty_message: false
-            type_scope_conventions:
-                types:
-                    - build
-                    - ci
-                    - chore
-                    - docs
-                    - feat
-                    - fix
-                    - new
-                    - upd
-                    - perf
-                    - refactor
-                    - revert
-                    - style
-                    - test
-                    - chg
-        phpstan:
-            configuration: vendor/shaquer/grumphp-config/phpstan.neon
-            level: 1
-            ignore_patterns:
-              - '/^(docroot|web)\/modules\/contrib\/(.*)(php)$/'
-              - '/^(docroot|web)\/core\/(.*)(php)$/'
-              - '/^vendor/'
-            memory_limit: "-1"
-            triggered_by: ['php']
-        yamllint:
-            whitelist_patterns:
-                - /^(docroot|web)\/modules\/custom\/(.*)/
-                - /^(docroot|web)\/themes\/custom\/(.*)/
-            ignore_patterns: []
-            
-            object_support: false
-            exception_on_invalid_type: false
-            parse_constant: false
-            parse_custom_tags: false
-        git_blacklist:
-            keywords:
-                - "die("
-                - "dsm("
-                - "dump("
-                - "print_r("
-                - "var_dump("
-                - "exit;"
-            whitelist_patterns:
-                - /^(docroot|web)\/modules\/custom\/(.*)/
-                - /^(docroot|web)\/themes\/custom\/(.*)/
-            triggered_by: ['php', 'module', 'inc', 'install', 'theme']
-            regexp_type: E
-            metadata:
-                blocking: true
-                priority: 900
-        phpcs:
-            standard:
-              - vendor/drupal/coder/coder_sniffer/Drupal
-              - vendor/drupal/coder/coder_sniffer/DrupalPractice
-            ignore_patterns:
-              - config/
-              - docroot/libraries/
-              - docroot/themes/custom/*/components
-              - web/libraries/
-              - web/themes/custom/*/components
-            triggered_by:
-              - php
-              - module
-              - inc
-              - yml
-              - install
-              - theme
-            whitelist_patterns:
-              - /^(docroot|web)\/modules\/custom\/(.*)/
-              - /^(docroot|web)\/themes\/custom\/(.*)/
+  ascii:
+    succeeded: vendor/shaquer/grumphp-config/art/success.txt
+    failed: vendor/shaquer/grumphp-config/art/error.txt
+  tasks:
+    twigcs:
+      path: "."
+      severity: "warning"
+      ruleset: 'FriendsOfTwig\Twigcs\Ruleset\Official'
+      triggered_by: ["twig", "twig.html"]
+      exclude:
+        - vendor
+        - web/core
+        - web/modules/contrib
+        - web/themes/contrib
+        - docroot/modules/contrib
+        - docroot/themes/contrib
+    jsonlint:
+      ignore_patterns:
+        ['/^(?!docroot\/modules\/custom).*/', '/^(?!web\/modules\/custom).*/']
+    git_commit_message:
+      max_subject_width: 0
+      allow_empty_message: false
+      type_scope_conventions:
+        types:
+          - build
+          - ci
+          - chore
+          - docs
+          - feat
+          - fix
+          - new
+          - upd
+          - perf
+          - refactor
+          - revert
+          - style
+          - test
+          - chg
+    phpstan:
+      configuration: vendor/shaquer/grumphp-config/phpstan.neon
+      level: 1
+      ignore_patterns:
+        - '/^(docroot|web)\/modules\/contrib\/(.*)(php)$/'
+        - '/^(docroot|web)\/core\/(.*)(php)$/'
+        - "/^vendor/"
+        - '/^\./'
+      memory_limit: "-1"
+      triggered_by: ["php"]
+    yamllint:
+      whitelist_patterns:
+        - /^(docroot|web)\/modules\/custom\/(.*)/
+        - /^(docroot|web)\/themes\/custom\/(.*)/
+      ignore_patterns: []
+
+      object_support: false
+      exception_on_invalid_type: false
+      parse_constant: false
+      parse_custom_tags: false
+    git_blacklist:
+      keywords:
+        - "die("
+        - "dsm("
+        - "dump("
+        - "print_r("
+        - "var_dump("
+        - "exit;"
+      whitelist_patterns:
+        - /^(docroot|web)\/modules\/custom\/(.*)/
+        - /^(docroot|web)\/themes\/custom\/(.*)/
+      triggered_by: ["php", "module", "inc", "install", "theme"]
+      regexp_type: E
+      metadata:
+        blocking: true
+        priority: 900
+    phpcs:
+      standard:
+        - vendor/drupal/coder/coder_sniffer/Drupal
+        - vendor/drupal/coder/coder_sniffer/DrupalPractice
+      ignore_patterns:
+        - config/
+        - docroot/libraries/
+        - docroot/themes/custom/*/components
+        - web/libraries/
+        - web/themes/custom/*/components
+      triggered_by:
+        - php
+        - module
+        - inc
+        - yml
+        - install
+        - theme
+      whitelist_patterns:
+        - /^(docroot|web)\/modules\/custom\/(.*)/
+        - /^(docroot|web)\/themes\/custom\/(.*)/
