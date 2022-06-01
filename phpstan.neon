@@ -4,6 +4,3 @@ parameters:
 includes:
   - ../../mglaman/phpstan-drupal/extension.neon
   - ../../phpstan/phpstan-deprecation-rules/rules.neon
-services:
-  errorFormatter.junit:
-    class: Mavimo\PHPStan\ErrorFormatter\JunitErrorFormatter
