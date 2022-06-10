@@ -1,8 +1,12 @@
 grumphp:
+  ignore_unstaged_changes: false
   ascii:
     succeeded: vendor/shaquer/grumphp-config/art/success.txt
     failed: vendor/shaquer/grumphp-config/art/error.txt
   tasks:
+    composer: ~
+    composer_normalize: ~
+    jsonlint: ~
     twigcs:
       path: "."
       severity: "warning"
@@ -38,6 +42,7 @@ grumphp:
           - test
           - chg
     phpstan:
+      use_grumphp_paths: true
       configuration: vendor/shaquer/grumphp-config/phpstan.neon
       level: 1
       ignore_patterns:
@@ -78,6 +83,11 @@ grumphp:
         - vendor/drupal/coder/coder_sniffer/Drupal
         - vendor/drupal/coder/coder_sniffer/DrupalPractice
       ignore_patterns:
+        - .github
+        - .gitlab
+        - bower_components
+        - node_modules
+        - vendor
         - config/
         - docroot/libraries/
         - docroot/themes/custom/*/components
@@ -87,9 +97,11 @@ grumphp:
         - php
         - module
         - inc
-        - yml
         - install
+        - test
+        - profile
         - theme
-      whitelist_patterns:
-        - /^(docroot|web)\/modules\/custom\/(.*)/
-        - /^(docroot|web)\/themes\/custom\/(.*)/
+        - css
+        - info
+        - txt
+        - md
