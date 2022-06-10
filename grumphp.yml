@@ -83,6 +83,8 @@ grumphp:
         - vendor/drupal/coder/coder_sniffer/Drupal
         - vendor/drupal/coder/coder_sniffer/DrupalPractice
       ignore_patterns:
+        - /^script\/(.*)/
+        - /^drush\/(.*)/
         - .github
         - .gitlab
         - bower_components
